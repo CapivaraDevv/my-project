@@ -67,9 +67,11 @@ body {
 }
 
 /* Classes de animação */
+/* Modifique a animação fadeInUp para garantir que os elementos apareçam */
 .fadeInUp {
   opacity: 0;
   animation: fadeInUp 0.8s ease-out forwards;
+  animation-fill-mode: both; /* Garante que o estado final seja mantido */
 }
 
 .pulseSlow {
@@ -107,4 +109,10 @@ body {
   transform: translateY(-3px) scale(1.05);
   background-color: rgb(55, 65, 81);
   box-shadow: 0 8px 20px -5px rgba(59, 130, 246, 0.3);
+}
+
+/* Adicione esta classe para elementos que devem ser visíveis imediatamente */
+.no-animation {
+  opacity: 1 !important;
+  animation: none !important;
 }
