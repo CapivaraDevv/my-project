@@ -1,109 +1,110 @@
 @import "tailwindcss";
 @tailwind utilities;
 
-html {
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
   scroll-behavior: smooth;
 }
 
-
-/* usa as variáveis no body e no resto */
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
+/* Animações */
 @keyframes fadeInUp {
-  0% {
+  from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-.fadeInUp {
-  animation: fadeInUp 0.8s ease forwards;
-}
-
-@keyframes pulseSlow {
-  0%, 100% {
+@keyframes pulse {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
-    opacity: 0.7;
+    opacity: 0.8;
   }
 }
 
-.pulseSlow {
-  animation: pulseSlow 3s ease-in-out infinite;
-}
-
-@keyframes bounceMini {
-  0%, 100% {
+@keyframes bounce {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
   }
 }
 
-.bounceMini:hover {
-  animation: bounceMini 0.5s ease;
-}
-
-/* Fade in + slide up */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.fadeInUp {
-  animation-name: fadeInUp;
-  animation-duration: 0.8s;
-  animation-fill-mode: both;
-}
-
-/* Glow animado */
 @keyframes glow {
-  0%, 100% {
-    text-shadow: 0 0 6px #3b82f6, 0 0 10px #2563eb;
+  0%,
+  100% {
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
   }
   50% {
-    text-shadow: 0 0 14px #60a5fa, 0 0 20px #3b82f6;
+    text-shadow: 0 0 25px rgba(59, 130, 246, 0.8), 0 0 35px rgba(59, 130, 246, 0.6);
   }
 }
-.glowBlue {
-  animation: glow 2.5s infinite ease-in-out;
-}
 
-/* Pulse suave */
-@keyframes pulseSlow {
-  0%, 100% {
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
     transform: scale(1);
-    box-shadow: 0 0 10px rgba(59, 130, 246, 0.7);
   }
-  50% {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(59, 130, 246, 1);
-  }
-}
-.pulseSlow {
-  animation: pulseSlow 3s infinite ease-in-out;
 }
 
-/* Hover suave com leve elevação */
-.hoverLift:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.4);
+/* Classes de animação */
+.fadeInUp {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.pulseSlow {
+  animation: pulse 3s infinite;
+}
+
+.bounceMini {
+  animation: bounce 2s infinite;
+}
+
+.glowBlue {
+  animation: glow 3s infinite;
+}
+
+.scaleIn {
+  opacity: 0;
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+.hoverLift {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.hoverLift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4);
+}
 
+/* Animação específica para skills */
+.skillCard {
+  transition: all 0.3s ease;
+}
+
+.skillCard:hover {
+  transform: translateY(-3px) scale(1.05);
+  background-color: rgb(55, 65, 81);
+  box-shadow: 0 8px 20px -5px rgba(59, 130, 246, 0.3);
+}
