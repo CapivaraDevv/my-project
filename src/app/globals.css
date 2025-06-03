@@ -7,10 +7,68 @@
   --background-end-rgb: 0, 0, 0;
 }
 
+/* Tema escuro (padrão) */
+.dark {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+}
+
+/* Tema claro */
+.light {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 240, 240, 240;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
   scroll-behavior: smooth;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estilos para tema claro */
+.light body {
+  background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(240, 240, 240));
+}
+
+.light .bg-black {
+  background-color: rgb(255, 255, 255) !important;
+}
+
+.light .bg-gray-900 {
+  background-color: rgb(249, 250, 251) !important;
+  border: 1px solid rgb(229, 231, 235);
+}
+
+.light .bg-gray-800 {
+  background-color: rgb(255, 255, 255) !important;
+  border: 1px solid rgb(229, 231, 235);
+}
+
+.light .text-gray-100 {
+  color: rgb(17, 24, 39) !important;
+}
+
+.light .text-gray-300 {
+  color: rgb(75, 85, 99) !important;
+}
+
+.light .text-gray-400 {
+  color: rgb(107, 114, 128) !important;
+}
+
+.light .text-blue-400 {
+  color: rgb(59, 130, 246) !important;
+}
+
+.light .border-gray-800 {
+  border-color: rgb(229, 231, 235) !important;
+}
+
+.light .border-gray-700 {
+  border-color: rgb(209, 213, 219) !important;
 }
 
 /* Animações */
@@ -67,11 +125,10 @@ body {
 }
 
 /* Classes de animação */
-/* Modifique a animação fadeInUp para garantir que os elementos apareçam */
 .fadeInUp {
   opacity: 0;
   animation: fadeInUp 0.8s ease-out forwards;
-  animation-fill-mode: both; /* Garante que o estado final seja mantido */
+  animation-fill-mode: both;
 }
 
 .pulseSlow {
@@ -109,6 +166,10 @@ body {
   transform: translateY(-3px) scale(1.05);
   background-color: rgb(55, 65, 81);
   box-shadow: 0 8px 20px -5px rgba(59, 130, 246, 0.3);
+}
+
+.light .skillCard:hover {
+  background-color: rgb(243, 244, 246) !important;
 }
 
 /* Adicione esta classe para elementos que devem ser visíveis imediatamente */
