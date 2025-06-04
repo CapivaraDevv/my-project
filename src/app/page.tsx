@@ -8,12 +8,13 @@ import ThemeToggle from "@/components/ThemeToggle"
 import ScrollToTop from "@/components/ScrollToTop"
 import StatsCounter from "@/components/StatsCounter"
 import SkillsRadar from "@/components/SkillsRadar"
-import InteractiveBackground from "@/components/InteractiveBackground"
 import ProjectShowcase from "@/components/ProjectShowcase"
 import EasterEggs from "@/components/EasterEggs"
 import AnimatedHero from "@/components/AnimatedHero"
 import AnimatedSkills from "@/components/AnimatedSkills"
+import SpaceBackground from "@/components/SpaceBackground"
 import { FadeInUp, SlideInLeft, SlideInRight } from "@/components/FramerAnimations"
+
 
 export const metadata = {
   title: "Pedro - Desenvolvedor Web",
@@ -24,7 +25,7 @@ export const metadata = {
 export default function Home() {
   return (
     <div className="bg-black text-gray-100 min-h-screen transition-colors duration-300">
-      <InteractiveBackground />
+      <SpaceBackground />
       <EasterEggs />
       <ThemeToggle />
       <ScrollToTop />

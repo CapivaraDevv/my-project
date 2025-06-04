@@ -65,7 +65,7 @@ export default function AnimatedHero() {
             }}
             className="bg-gradient-to-r from-blue-400 via-purple-500 to-blue-400 bg-clip-text text-transparent bg-[length:200%_auto]"
           >
-            Olá, eu sou o PedroHenrique
+            Olá, eu sou o Pedro Henrique
           </motion.span>
           <motion.span
             animate={{
@@ -79,7 +79,7 @@ export default function AnimatedHero() {
             }}
             className="inline-block ml-2"
           >
-            👋
+            
           </motion.span>
         </motion.h1>
 
